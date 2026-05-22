@@ -78,8 +78,9 @@ resource "null_resource" "kind-setup" {
       "sudo systemctl enable docker",
       "sudo usermod -a -G docker devops",
       "sudo curl -Lo /bin/kind https://kind.sigs.k8s.io/dl/v0.31.0/kind-linux-amd64",
-      "sudo chmod ugo+x /bin/kind",
-      #"sudo kind create cluster --name rhel10-cluster"
+      "sudo curl -Lo /bin/kubectl https://dl.k8s.io/release/v1.36.1/bin/linux/amd64/kubectl",
+      "sudo chmod ugo+x /bin/kind /bin/kubectl",
+      "sudo kind create cluster --name rhel10-cluster"
     ]
 
   }
