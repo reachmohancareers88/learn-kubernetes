@@ -46,3 +46,8 @@ variable "vm_name" {
   default = "docker"
 }
 
+
+output "ip" {
+  value = azurerm_public_ip.main.ip_address
+}
+
