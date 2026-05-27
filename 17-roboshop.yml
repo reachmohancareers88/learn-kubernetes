@@ -246,6 +246,8 @@ spec:
       containers:
       - name: roboshop-user
         image: raghudevopsb89.azurecr.io/roboshop-user
+      imagePullSecrets:
+      - name: acr
 ---
 apiVersion: v1
 kind: Service
