@@ -1,0 +1,266 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-frontend
+  labels:
+    app: roboshop-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-frontend
+  template:
+    metadata:
+      labels:
+        app: roboshop-frontend
+    spec:
+      containers:
+      - name: roboshop-frontend
+        image: raghudevopsb89.azurecr.io/roboshop-frontend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-frontend
+spec:
+  selector:
+    app: roboshop-frontend
+  ports:
+    - protocol: TCP
+      port: 80 # Service Port
+      targetPort: 80 # Container Port
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-cart
+  labels:
+    app: roboshop-cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-cart
+  template:
+    metadata:
+      labels:
+        app: roboshop-cart
+    spec:
+      containers:
+      - name: roboshop-cart
+        image: raghudevopsb89.azurecr.io/roboshop-cart
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-cart
+spec:
+  selector:
+    app: roboshop-cart
+  ports:
+    - protocol: TCP
+      port: 8003 # Service Port
+      targetPort: 8003 # Container Port
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-catalogue
+  labels:
+    app: roboshop-catalogue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-catalogue
+  template:
+    metadata:
+      labels:
+        app: roboshop-catalogue
+    spec:
+      containers:
+      - name: roboshop-catalogue
+        image: raghudevopsb89.azurecr.io/roboshop-catalogue
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-catalogue
+spec:
+  selector:
+    app: roboshop-catalogue
+  ports:
+    - protocol: TCP
+      port: 8002 # Service Port
+      targetPort: 8002 # Container Port
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-orders
+  labels:
+    app: roboshop-orders
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-orders
+  template:
+    metadata:
+      labels:
+        app: roboshop-orders
+    spec:
+      containers:
+      - name: roboshop-orders
+        image: raghudevopsb89.azurecr.io/roboshop-orders
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-orders
+spec:
+  selector:
+    app: roboshop-orders
+  ports:
+    - protocol: TCP
+      port: 8007 # Service Port
+      targetPort: 8007 # Container Port
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-payment
+  labels:
+    app: roboshop-payment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-payment
+  template:
+    metadata:
+      labels:
+        app: roboshop-payment
+    spec:
+      containers:
+      - name: roboshop-payment
+        image: raghudevopsb89.azurecr.io/roboshop-payment
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-payment
+spec:
+  selector:
+    app: roboshop-payment
+  ports:
+    - protocol: TCP
+      port: 8005 # Service Port
+      targetPort: 8005 # Container Port
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-ratings
+  labels:
+    app: roboshop-ratings
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-ratings
+  template:
+    metadata:
+      labels:
+        app: roboshop-ratings
+    spec:
+      containers:
+      - name: roboshop-ratings
+        image: raghudevopsb89.azurecr.io/roboshop-ratings
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-ratings
+spec:
+  selector:
+    app: roboshop-ratings
+  ports:
+    - protocol: TCP
+      port: 8006 # Service Port
+      targetPort: 8006 # Container Port
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-shipping
+  labels:
+    app: roboshop-shipping
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-shipping
+  template:
+    metadata:
+      labels:
+        app: roboshop-shipping
+    spec:
+      containers:
+      - name: roboshop-shipping
+        image: raghudevopsb89.azurecr.io/roboshop-shipping
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-shipping
+spec:
+  selector:
+    app: roboshop-shipping
+  ports:
+    - protocol: TCP
+      port: 8004 # Service Port
+      targetPort: 8004 # Container Port
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-user
+  labels:
+    app: roboshop-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-user
+  template:
+    metadata:
+      labels:
+        app: roboshop-user
+    spec:
+      containers:
+      - name: roboshop-user
+        image: raghudevopsb89.azurecr.io/roboshop-user
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-user
+spec:
+  selector:
+    app: roboshop-user
+  ports:
+    - protocol: TCP
+      port: 8001 # Service Port
+      targetPort: 8001 # Container Port
+
+
+## We have to setup configmap
+
+## 1. Standalone k8s, How to access my frontend ?
+## 2. Code Duplication.
