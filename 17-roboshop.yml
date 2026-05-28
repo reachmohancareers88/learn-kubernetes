@@ -17,8 +17,6 @@ spec:
       containers:
       - name: roboshop-frontend
         image: raghudevopsb89.azurecr.io/roboshop-frontend
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
