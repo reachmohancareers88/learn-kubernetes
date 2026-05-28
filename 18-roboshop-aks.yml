@@ -17,8 +17,6 @@ spec:
       containers:
       - name: roboshop-frontend
         image: raghudevopsb89.azurecr.io/roboshop-frontend
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
@@ -54,8 +52,6 @@ spec:
         envFrom:
           - configMapRef:
               name: roboshop-cart
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
@@ -91,8 +87,6 @@ spec:
         envFrom:
           - configMapRef:
               name: roboshop-catalogue
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
@@ -129,8 +123,6 @@ spec:
         envFrom:
           - configMapRef:
               name: roboshop-orders
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
@@ -167,8 +159,6 @@ spec:
         envFrom:
           - configMapRef:
               name: roboshop-payment
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
@@ -205,8 +195,6 @@ spec:
         envFrom:
           - configMapRef:
               name: roboshop-ratings
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
@@ -243,8 +231,6 @@ spec:
         envFrom:
           - configMapRef:
               name: roboshop-shipping
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
@@ -281,8 +267,6 @@ spec:
         envFrom:
           - configMapRef:
               name: roboshop-user
-      imagePullSecrets:
-      - name: acr
 ---
 apiVersion: v1
 kind: Service
