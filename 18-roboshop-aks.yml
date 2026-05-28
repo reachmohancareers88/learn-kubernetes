@@ -368,6 +368,7 @@ spec:
       containers:
       - name: catalogue-db
         image: raghudevopsb89.azurecr.io/roboshop-catalogue-db
+        imagePullPolicy: Always
         envFrom:
           - configMapRef:
               name: roboshop-catalogue
