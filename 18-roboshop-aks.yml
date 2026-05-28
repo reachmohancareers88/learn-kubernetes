@@ -356,6 +356,22 @@ data:
   MYSQL_DATABASE : ratings
   PORT : "8006"
 
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: roboshop-catalogue-db
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: catalogue-db
+        image: raghudevopsb89.azurecr.io/roboshop-catalogue-db
+        envFrom:
+          - configMapRef:
+              name: roboshop-catalogue
+
 
 ## 1. Code Duplication.
 
