@@ -319,6 +319,7 @@ data:
   DB_HOST : mysql-dev.rdevopsb89.online
   DB_USER : shipping
   DB_PASS : RoboShop@1
+  MYSQL_ROOT_PASSWORD : RoboShop@1
   PORT : "8004"
 ---
 apiVersion: v1
@@ -354,25 +355,11 @@ data:
   MYSQL_HOST : mysql-dev.rdevopsb89.online
   MYSQL_USER : ratings
   MYSQL_PASSWORD : RoboShop@1
+  MYSQL_ROOT_PASSWORD : RoboShop@1
   MYSQL_DATABASE : ratings
   PORT : "8006"
 
----
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: roboshop-catalogue-db
-spec:
-  template:
-    spec:
-      restartPolicy: Never
-      containers:
-      - name: catalogue-db
-        image: raghudevopsb89.azurecr.io/roboshop-catalogue-db
-        imagePullPolicy: Always
-        envFrom:
-          - configMapRef:
-              name: roboshop-catalogue
+
 
 
 ## 1. Code Duplication.
