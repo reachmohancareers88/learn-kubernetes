@@ -301,7 +301,7 @@ metadata:
 data:
   REDIS_HOST : redis-dev.rdevopsb89.online
   CATALOGUE_URL : http://roboshop-catalogue:8002
-  PORT : 8003
+  PORT : "8003"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -312,7 +312,7 @@ data:
   MYSQL_USER : catalogue
   MYSQL_PASSWORD : RoboShop@1
   MYSQL_DATABASE : catalogue
-  PORT : 8002
+  PORT : "8002"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -321,7 +321,7 @@ metadata:
 data:
   MONGO_URL : mongodb://mongodb-dev.rdevopsb89.online:27017/users
   JWT_SECRET : roboshop-secret-key
-  PORT : 8001
+  PORT : "8001"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -331,7 +331,7 @@ data:
   DB_HOST : mysql-dev.rdevopsb89.online
   DB_USER : shipping
   DB_PASS : RoboShop@1
-  PORT : 8004
+  PORT : "8004"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -343,7 +343,7 @@ data:
   AMQP_PASS : RoboShop@1
   CART_URL : http://roboshop-cart:8003
   USER_URL : http://roboshop-user:8001
-  PORT : 8005
+  PORT : "8005"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -356,7 +356,7 @@ data:
   AMQP_PASS : RoboShop@1
   SHIPPING_URL : http://roboshop-shipping:8004
   NOTIFICATION_URL : http://localhost:8008
-  PORT : 8007
+  PORT : "8007"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -367,7 +367,7 @@ data:
   MYSQL_USER : ratings
   MYSQL_PASSWORD : RoboShop@1
   MYSQL_DATABASE : ratings
-  PORT : 8006
+  PORT : "8006"
 
 
 ## 1. Standalone k8s, How to access my frontend ?
