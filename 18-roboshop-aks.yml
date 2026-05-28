@@ -23,6 +23,7 @@ kind: Service
 metadata:
   name: roboshop-frontend
 spec:
+  type: LoadBalancer
   selector:
     app: roboshop-frontend
   ports:
