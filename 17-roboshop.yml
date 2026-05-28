@@ -301,75 +301,75 @@ kind: ConfigMap
 metadata:
   name: roboshop-cart
 data:
-  REDIS_HOST=redis-dev.rdevopsb89.online
-  CATALOGUE_URL=http://roboshop-catalogue:8002
-  PORT=8003
+  REDIS_HOST : redis-dev.rdevopsb89.online
+  CATALOGUE_URL : http://roboshop-catalogue:8002
+  PORT : 8003
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: roboshop-catalogue
 data:
-  MYSQL_HOST=mysql-dev.rdevopsb89.online
-  MYSQL_USER=catalogue
-  MYSQL_PASSWORD=RoboShop@1
-  MYSQL_DATABASE=catalogue
-  PORT=8002
+  MYSQL_HOST : mysql-dev.rdevopsb89.online
+  MYSQL_USER : catalogue
+  MYSQL_PASSWORD : RoboShop@1
+  MYSQL_DATABASE : catalogue
+  PORT : 8002
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: roboshop-user
 data:
-  MONGO_URL=mongodb://mongodb-dev.rdevopsb89.online:27017/users
-  JWT_SECRET=roboshop-secret-key
-  PORT=8001
+  MONGO_URL : mongodb://mongodb-dev.rdevopsb89.online:27017/users
+  JWT_SECRET : roboshop-secret-key
+  PORT : 8001
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: roboshop-shipping
 data:
-  DB_HOST=mysql-dev.rdevopsb89.online
-  DB_USER=shipping
-  DB_PASS=RoboShop@1
-  PORT=8004
+  DB_HOST : mysql-dev.rdevopsb89.online
+  DB_USER : shipping
+  DB_PASS : RoboShop@1
+  PORT : 8004
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: roboshop-payment
 data:
-  AMQP_HOST=rabbitmq-dev.rdevopsb89.online
-  AMQP_USER=roboshop
-  AMQP_PASS=RoboShop@1
-  CART_URL=http://roboshop-cart:8003
-  USER_URL=http://roboshop-user:8001
-  PORT=8005
+  AMQP_HOST : rabbitmq-dev.rdevopsb89.online
+  AMQP_USER : roboshop
+  AMQP_PASS : RoboShop@1
+  CART_URL : http://roboshop-cart:8003
+  USER_URL : http://roboshop-user:8001
+  PORT : 8005
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: roboshop-orders
 data:
-  MONGO_URL=mongodb://mongodb-dev.rdevopsb89.online:27017/orders
-  AMQP_HOST=rabbitmq-dev.rdevopsb89.online
-  AMQP_USER=roboshop
-  AMQP_PASS=RoboShop@1
-  SHIPPING_URL=http://roboshop-shipping:8004
-  NOTIFICATION_URL=http://localhost:8008
-  PORT=8007
+  MONGO_URL : mongodb://mongodb-dev.rdevopsb89.online:27017/orders
+  AMQP_HOST : rabbitmq-dev.rdevopsb89.online
+  AMQP_USER : roboshop
+  AMQP_PASS : RoboShop@1
+  SHIPPING_URL : http://roboshop-shipping:8004
+  NOTIFICATION_URL : http://localhost:8008
+  PORT : 8007
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: roboshop-ratings
 data:
-  MYSQL_HOST=mysql-dev.rdevopsb89.online
-  MYSQL_USER=ratings
-  MYSQL_PASSWORD=RoboShop@1
-  MYSQL_DATABASE=ratings
-  PORT=8006
+  MYSQL_HOST : mysql-dev.rdevopsb89.online
+  MYSQL_USER : ratings
+  MYSQL_PASSWORD : RoboShop@1
+  MYSQL_DATABASE : ratings
+  PORT : 8006
 
 
 ## 1. Standalone k8s, How to access my frontend ?
