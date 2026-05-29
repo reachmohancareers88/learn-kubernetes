@@ -193,6 +193,7 @@ spec:
       containers:
       - name: roboshop-ratings
         image: raghudevopsb89.azurecr.io/roboshop-ratings
+        imagePullPolicy: Always
         envFrom:
           - configMapRef:
               name: roboshop-ratings
