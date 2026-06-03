@@ -1,0 +1,10 @@
+## In this example, container will be up, But nginx wont be available for few seconds.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+spec:
+  containers:
+  - name: debug
+    image: rkalluru/debug
+
