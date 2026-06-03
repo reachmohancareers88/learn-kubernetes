@@ -7,4 +7,13 @@ spec:
   containers:
   - name: nginx
     image: rkalluru/delay-nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl-cli
+spec:
+  containers:
+  - name: redhat
+    image: rkalluru/learnk8s:rhel9-bare
 
