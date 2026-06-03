@@ -17,4 +17,22 @@ spec:
   containers:
   - name: redhat
     image: rkalluru/learnk8s:rhel9-bare
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: probe-readiness
+spec:
+  containers:
+  - name: nginx
+    image: rkalluru/delay-nginx
+    imagePullPolicy: Always
+    readinessProbe:
+      tcpSocket:
+        port: 80
+      initialDelaySeconds: 15
+      periodSeconds: 10
+      failureThreshold: 10
+
+
 
