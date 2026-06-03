@@ -2,7 +2,6 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: hello-cron
-  namespace: ch23
 spec:
   schedule: "*/1 * * * *"
   successfulJobsHistoryLimit: 3
