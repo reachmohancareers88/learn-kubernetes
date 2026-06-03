@@ -7,6 +7,7 @@ spec:
   containers:
   - name: nginx
     image: rkalluru/delay-nginx
+    imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Pod
