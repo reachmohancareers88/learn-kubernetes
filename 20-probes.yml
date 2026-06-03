@@ -52,7 +52,7 @@ spec:
     livenessProbe:
       tcpSocket:
         port: 80
-      initialDelaySeconds: 2
+      initialDelaySeconds: 115
       periodSeconds: 5
       failureThreshold: 3
 
