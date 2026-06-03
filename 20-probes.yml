@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: debug
+  name: probe-delay-nginx
 spec:
   containers:
-  - name: debug
-    image: rkalluru/debug
+  - name: nginx
+    image: rkalluru/delay-nginx
 
