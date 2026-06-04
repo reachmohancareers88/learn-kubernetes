@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-info
+spec:
+  selector:
+    matchLabels:
+      app: node-info
+  template:
+    metadata:
+      labels:
+        app: node-info
+    spec:
+      containers:
+        - name: agent
+          image: rkalluru/learnk8s:rhel9-bare
+          command: ["bash", "-c", "while true; do echo $(date) $(hostname); sleep 30; done"]
+
