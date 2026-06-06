@@ -93,24 +93,24 @@ spec:
       - weight: 80
         preference:
           matchExpressions:
-          - key: disktype
+          - key: apps
             operator: In
             values:
-            - ssd
+            - roboshop
+      - weight: 5
+        preference:
+          matchExpressions:
+          - key: project
+            operator: In
+            values:
+            - frontend
       - weight: 15
         preference:
           matchExpressions:
-          - key: disktype
+          - key: project
             operator: In
             values:
-            - ssd
-      - weight: 15
-        preference:
-          matchExpressions:
-          - key: disktype
-            operator: In
-            values:
-            - ssd
+            - backend
   containers:
   - name: nginx
     image: nginx
