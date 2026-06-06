@@ -36,12 +36,12 @@ spec:
           - key: apps
             operator: In
             values:
-            - roboshop
+            - roboshop # label that exists
         - matchExpressions:
           - key: apps
             operator: In
             values:
-            - demo
+            - demo # label that does not exist
   containers:
   - name: nginx
     image: nginx
