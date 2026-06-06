@@ -79,3 +79,39 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: IfNotPresent
+---
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-aff-3
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 80
+        preference:
+          matchExpressions:
+          - key: disktype
+            operator: In
+            values:
+            - ssd
+      - weight: 15
+        preference:
+          matchExpressions:
+          - key: disktype
+            operator: In
+            values:
+            - ssd
+      - weight: 15
+        preference:
+          matchExpressions:
+          - key: disktype
+            operator: In
+            values:
+            - ssd
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
