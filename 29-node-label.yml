@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod
+  name: pod-with-no-labelled-node
 spec:
   containers:
   - name: redhat
