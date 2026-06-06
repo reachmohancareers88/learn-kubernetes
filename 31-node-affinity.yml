@@ -1,0 +1,22 @@
+#kubectl label node aks-pool1-27418639-vmss000000 apps=roboshop
+#kubectl label node aks-pool1-27418639-vmss000000 apps=roboshop
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: apps
+            operator: In
+            values:
+            - roboshop
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+
