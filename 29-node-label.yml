@@ -25,3 +25,4 @@ spec:
 
 # In this scenario, pod will not be scheduled anywhere.
 # Want to change this behaviour , if any label is matched then we need to give preference, else atleast the pod should be scheduled.
+# Labels with either or is not possible.
