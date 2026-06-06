@@ -11,3 +11,15 @@ spec:
   nodeSelector:
     apptype: demo
 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod
+spec:
+  containers:
+  - name: redhat
+    image: rkalluru/learnk8s:rhel9-bare
+  nodeSelector:
+    apptype: demo1
+
