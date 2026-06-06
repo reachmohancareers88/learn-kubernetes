@@ -28,3 +28,22 @@ spec:
   containers:
   - name: web-container
     image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-anti-affinity
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: project
+            operator: In
+            values:
+            - frontend
+        topologyKey: kubernetes.io/hostname
+  containers:
+  - name: web-container
+    image: nginx
