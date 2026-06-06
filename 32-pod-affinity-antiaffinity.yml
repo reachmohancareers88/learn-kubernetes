@@ -34,7 +34,7 @@ spec:
             - key: project
               operator: In
               values:
-              - backend
+              - frontend
           topologyKey: topology.kubernetes.io/zone
   containers:
   - name: nginx
