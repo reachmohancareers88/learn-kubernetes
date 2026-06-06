@@ -25,6 +25,17 @@ spec:
             values:
             - frontend
         topologyKey: topology.kubernetes.io/zone
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: project
+              operator: In
+              values:
+              - backend
+          topologyKey: topology.kubernetes.io/zone
   containers:
   - name: nginx
     image: nginx
