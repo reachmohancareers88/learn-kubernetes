@@ -1,5 +1,7 @@
 #kubectl label node aks-pool1-27418639-vmss000000 apps=roboshop
-#kubectl label node aks-pool1-27418639-vmss000000 apps=roboshop
+#kubectl label node aks-pool1-27418639-vmss000001 apps=roboshop
+#kubectl label node aks-pool1-27418639-vmss000000 project=backend
+#kubectl label node aks-pool1-27418639-vmss000001 project=frontend
 ---
 apiVersion: v1
 kind: Pod
@@ -20,3 +22,27 @@ spec:
     image: nginx
     imagePullPolicy: IfNotPresent
 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-aff-1
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: apps
+            operator: In
+            values:
+            - roboshop
+        - matchExpressions:
+          - key: apps
+            operator: In
+            values:
+            - demo
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
