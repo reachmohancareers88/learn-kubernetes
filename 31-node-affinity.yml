@@ -55,3 +55,27 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-aff-2
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: apps
+            operator: In
+            values:
+            - roboshop
+        - matchExpressions:
+          - key: project
+            operator: In
+            values:
+            - backend
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
