@@ -16,7 +16,7 @@ metadata:
 spec:
   containers:
   - name: redhat
-    image: mohanacr89.azurecr.io/learnk8s:rhel9-bare
+    image: docker.io/redhat/ubi9
 ---
 apiVersion: v1
 kind: Pod
