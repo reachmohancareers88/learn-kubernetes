@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: c1
-      image: rkalluru/learnk8s:rhel9-bare
+      image: mohanacr89.azurecr.io/learnk8s:rhel9-bare
 
 ---
 apiVersion: v1
@@ -21,4 +21,4 @@ metadata:
 spec:
   containers:
     - name: c2
-      image: rkalluru/learnk8s:rhel9-bare
+      image: mohanacr89.azurecr.io/learnk8s:rhel9-bare

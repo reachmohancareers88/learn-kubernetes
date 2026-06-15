@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: debug
-    image: rkalluru/debug
+    image: mohanacr89.azurecr.io/debug
   - name: nginx
     image: nginx
 

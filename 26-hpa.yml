@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hpa
-        image: rkalluru/debug:hpa
+        image: mohanacr89.azurecr.io/debug:hpa
         resources:
           requests:
             cpu: 100m

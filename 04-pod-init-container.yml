@@ -14,7 +14,7 @@ spec:
       name: sample
   initContainers:
   - name: redhat
-    image: rkalluru/learnk8s:init-container-html-generator
+    image: mohanacr89.azurecr.io/learnk8s:init-container-html-generator
     volumeMounts:
     - mountPath: /mnt/html
       name: sample

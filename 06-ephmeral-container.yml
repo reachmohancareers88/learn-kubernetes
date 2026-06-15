@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: sample
-      image: docker.io/rkalluru/ephmeral-practice
+      image: docker.io/mohanacr89.azurecr.io/ephmeral-practice
 
 # Command to add ephemeral container.
 # kubectl debug -it --attach=true -c debug --image=redhat/ubi10 ephmeral-container-example

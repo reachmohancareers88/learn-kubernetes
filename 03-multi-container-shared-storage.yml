@@ -13,7 +13,7 @@ spec:
     - mountPath: /usr/share/nginx/html
       name: sample
   - name: redhat
-    image: rkalluru/learnk8s:rhel9-bare
+    image: mohanacr89.azurecr.io/learnk8s:rhel9-bare
     volumeMounts:
     - mountPath: /opt
       name: sample

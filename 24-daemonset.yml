@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
         - name: agent
-          image: rkalluru/learnk8s:rhel9-bare
+          image: mohanacr89.azurecr.io/learnk8s:rhel9-bare
           command: ["bash", "-c", "while true; do echo $(date) $(hostname); sleep 30; done"]
 

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: roboshop-frontend
-        image: raghudevopsb89.azurecr.io/roboshop-frontend
+        image: mohanacr89.azurecr.io/roboshop-frontend
 ---
 apiVersion: v1
 kind: Service
@@ -49,7 +49,7 @@ spec:
     spec:
       containers:
       - name: roboshop-cart
-        image: raghudevopsb89.azurecr.io/roboshop-cart
+        image: mohanacr89.azurecr.io/roboshop-cart
         envFrom:
           - configMapRef:
               name: roboshop-cart
@@ -84,7 +84,7 @@ spec:
     spec:
       containers:
       - name: roboshop-catalogue
-        image: raghudevopsb89.azurecr.io/roboshop-catalogue
+        image: mohanacr89.azurecr.io/roboshop-catalogue
         envFrom:
           - configMapRef:
               name: roboshop-catalogue
@@ -120,7 +120,7 @@ spec:
     spec:
       containers:
       - name: roboshop-orders
-        image: raghudevopsb89.azurecr.io/roboshop-orders
+        image: mohanacr89.azurecr.io/roboshop-orders
         envFrom:
           - configMapRef:
               name: roboshop-orders
@@ -156,7 +156,7 @@ spec:
     spec:
       containers:
       - name: roboshop-payment
-        image: raghudevopsb89.azurecr.io/roboshop-payment
+        image: mohanacr89.azurecr.io/roboshop-payment
         envFrom:
           - configMapRef:
               name: roboshop-payment
@@ -192,7 +192,7 @@ spec:
     spec:
       containers:
       - name: roboshop-ratings
-        image: raghudevopsb89.azurecr.io/roboshop-ratings
+        image: mohanacr89.azurecr.io/roboshop-ratings
         imagePullPolicy: Always
         envFrom:
           - configMapRef:
@@ -229,7 +229,7 @@ spec:
     spec:
       containers:
       - name: roboshop-shipping
-        image: raghudevopsb89.azurecr.io/roboshop-shipping
+        image: mohanacr89.azurecr.io/roboshop-shipping
         envFrom:
           - configMapRef:
               name: roboshop-shipping
@@ -265,7 +265,7 @@ spec:
     spec:
       containers:
       - name: roboshop-user
-        image: raghudevopsb89.azurecr.io/roboshop-user
+        image: mohanacr89.azurecr.io/roboshop-user
         envFrom:
           - configMapRef:
               name: roboshop-user
@@ -287,7 +287,7 @@ kind: ConfigMap
 metadata:
   name: roboshop-cart
 data:
-  REDIS_HOST : valkey-dev.rdevopsb89.online
+  REDIS_HOST : valkey-dev.drmohanlearning.online
   CATALOGUE_URL : http://roboshop-catalogue:8002
   PORT : "8003"
 ---
@@ -296,7 +296,7 @@ kind: ConfigMap
 metadata:
   name: roboshop-catalogue
 data:
-  MYSQL_HOST : mysql-dev.rdevopsb89.online
+  MYSQL_HOST : mysql-dev.drmohanlearning.online
   MYSQL_USER : catalogue
   MYSQL_PASSWORD : RoboShop@1
   MYSQL_ROOT_PASSWORD : RoboShop@1
@@ -308,7 +308,7 @@ kind: ConfigMap
 metadata:
   name: roboshop-user
 data:
-  MONGO_URL : mongodb://mongodb-dev.rdevopsb89.online:27017/users
+  MONGO_URL : mongodb://mongodb-dev.drmohanlearning.online:27017/users
   JWT_SECRET : roboshop-secret-key
   PORT : "8001"
 ---
@@ -317,7 +317,7 @@ kind: ConfigMap
 metadata:
   name: roboshop-shipping
 data:
-  DB_HOST : mysql-dev.rdevopsb89.online
+  DB_HOST : mysql-dev.drmohanlearning.online
   DB_USER : shipping
   DB_PASS : RoboShop@1
   MYSQL_ROOT_PASSWORD : RoboShop@1
@@ -328,7 +328,7 @@ kind: ConfigMap
 metadata:
   name: roboshop-payment
 data:
-  AMQP_HOST : rabbitmq-dev.rdevopsb89.online
+  AMQP_HOST : rabbitmq-dev.drmohanlearning.online
   AMQP_USER : roboshop
   AMQP_PASS : RoboShop@1
   CART_URL : http://roboshop-cart:8003
@@ -340,8 +340,8 @@ kind: ConfigMap
 metadata:
   name: roboshop-orders
 data:
-  MONGO_URL : mongodb://mongodb-dev.rdevopsb89.online:27017/orders
-  AMQP_HOST : rabbitmq-dev.rdevopsb89.online
+  MONGO_URL : mongodb://mongodb-dev.drmohanlearning.online:27017/orders
+  AMQP_HOST : rabbitmq-dev.drmohanlearning.online
   AMQP_USER : roboshop
   AMQP_PASS : RoboShop@1
   SHIPPING_URL : http://roboshop-shipping:8004
@@ -353,7 +353,7 @@ kind: ConfigMap
 metadata:
   name: roboshop-ratings
 data:
-  MYSQL_HOST : mysql-dev.rdevopsb89.online
+  MYSQL_HOST : mysql-dev.drmohanlearning.online
   MYSQL_USER : ratings
   MYSQL_PASSWORD : RoboShop@1
   MYSQL_ROOT_PASSWORD : RoboShop@1
@@ -371,7 +371,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: catalogue-db
-        image: raghudevopsb89.azurecr.io/roboshop-catalogue-db
+        image: mohanacr89.azurecr.io/roboshop-catalogue-db
         imagePullPolicy: Always
         envFrom:
           - configMapRef:
@@ -388,7 +388,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: ratings-db
-        image: raghudevopsb89.azurecr.io/roboshop-ratings-db
+        image: mohanacr89.azurecr.io/roboshop-ratings-db
         imagePullPolicy: Always
         envFrom:
           - configMapRef:
@@ -404,7 +404,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: shipping-db
-        image: raghudevopsb89.azurecr.io/roboshop-shipping-db
+        image: mohanacr89.azurecr.io/roboshop-shipping-db
         imagePullPolicy: Always
         envFrom:
           - configMapRef:
@@ -420,7 +420,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: user-db
-        image: raghudevopsb89.azurecr.io/roboshop-user-db
+        image: mohanacr89.azurecr.io/roboshop-user-db
         imagePullPolicy: Always
         envFrom:
           - configMapRef:

@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: rkalluru/delay-nginx
+    image: mohanacr89.azurecr.io/delay-nginx
     imagePullPolicy: Always
 ---
 apiVersion: v1
@@ -16,7 +16,7 @@ metadata:
 spec:
   containers:
   - name: redhat
-    image: rkalluru/learnk8s:rhel9-bare
+    image: mohanacr89.azurecr.io/learnk8s:rhel9-bare
 ---
 apiVersion: v1
 kind: Pod
@@ -25,7 +25,7 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: rkalluru/delay-nginx
+    image: mohanacr89.azurecr.io/delay-nginx
     imagePullPolicy: Always
     readinessProbe:
       tcpSocket:
@@ -41,7 +41,7 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: rkalluru/delay-nginx
+    image: mohanacr89.azurecr.io/delay-nginx
     imagePullPolicy: Always
     readinessProbe:
       tcpSocket:
@@ -63,7 +63,7 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: rkalluru/delay-nginx
+    image: mohanacr89.azurecr.io/delay-nginx
     imagePullPolicy: Always
     startupProbe:
       tcpSocket:
